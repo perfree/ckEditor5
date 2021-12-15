@@ -19,6 +19,7 @@ import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily.js';
 import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
 import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
@@ -34,10 +35,15 @@ import List from '@ckeditor/ckeditor5-list/src/list.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
+import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting.js';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough.js';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript.js';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
+import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption.js';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
@@ -63,6 +69,7 @@ Editor.builtinPlugins = [
 	FontSize,
 	GeneralHtmlSupport,
 	Heading,
+	Highlight,
 	HorizontalLine,
 	Image,
 	ImageCaption,
@@ -78,10 +85,15 @@ Editor.builtinPlugins = [
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
+	RemoveFormat,
+	SourceEditing,
 	Strikethrough,
 	Subscript,
 	Superscript,
 	Table,
+	TableCaption,
+	TableCellProperties,
+	TableProperties,
 	TableToolbar,
 	TextTransformation,
 	TodoList,
@@ -103,6 +115,8 @@ Editor.defaultConfig = {
 			'link',
 			'strikethrough',
 			'horizontalLine',
+			'highlight',
+			'removeFormat',
 			'|',
 			'bulletedList',
 			'numberedList',
@@ -120,7 +134,8 @@ Editor.defaultConfig = {
 			'codeBlock',
 			'findAndReplace',
 			'redo',
-			'undo'
+			'undo',
+			'sourceEditing'
 		]
 	},
 	language: 'zh-cn',
@@ -137,7 +152,9 @@ Editor.defaultConfig = {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
+			'mergeTableCells',
+			'tableCellProperties',
+			'tableProperties'
 		]
 	}
 };
